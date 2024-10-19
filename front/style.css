@@ -1,88 +1,116 @@
-body
-{
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+* {
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.titulo 
-{   
-    text-align: center;
-    color: rgb(138, 201, 238);      
+body{
 
-}
-
-.content
-{
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-}
-.content-itens
-{
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+    background-image:url('../image/fundo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
-.content-body
-{
+#to_do{
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    gap:25px;
+    background-color: #4F4F4F;
+    padding: 18px;
+    border-radius: 8px;
+    width: 430px;
 }
-#botao-add,
-#text-input
-{
+
+#to_do h1{
+
+    color: aliceblue;
+    font-size: 28px;
+    text-transform: uppercase;
+
+}
+.to-do-form{
+    display: flex;
+    width: 100%;
+}
+
+.to-do-form input{
+    background-color: transparent;
     border: none;
-    font-size: 1rem;
-    outline: none;
-    padding: 1rem;
-}
-#text-input{
-    width: 15rem;
-    border-radius: 45rem;
-    
-}
-    
-#botao-add
-{
-    background-color: rgb(240, 248, 255);
-    width: 4rem;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    transition: 0.4s;
-}
-#botao-add:hover
-{
-    background-color:rgb(210,220,220) ;
+    color: aliceblue;
+    font-size: 16px;
+    width: 100%;
+    padding: 4px;
+    border-bottom: 2px solid #ffffff;
 }
 
-#lista
-{
+.to-do-form input:focus-visible{
+    outline: none;
+}
+
+.to-do-form .form-button{
+    border:none;
+    min-width: 40px;
+    min-height: 40px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    font-size: 20px;
+    transition: scale 0.5s ease;
+
+
+}
+
+.to-do-form .form-button:hover{
+    cursor: pointer;
+    scale:1.05;
+}
+
+#tasks{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 0;    
-    color: #fff;
-    
-    
+    gap: 12px;
+    max-height: 400px;
+    overflow: auto;
 }
-#lista li{
-    font-size: 1.4rem;
+
+.task {
+
     display: flex;
-    list-style-type: none;
+    align-items: center;
+    
     justify-content: space-between;
+    color:#ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
 
 }
 
+.task .progress{
+    margin-right: 10px;
 
-
-
-  
+}
+.task .task-description{
     
+    font-size: 16px;
+    color: #ffffff;
+    padding: 4px 0px;
+    width: 100%;
+}
+
+.task .task-actions{
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    
+}
+
+.hidden{
+    display:none;
+}
+
