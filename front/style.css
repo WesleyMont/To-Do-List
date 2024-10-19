@@ -104,7 +104,7 @@ body{
 }
 
 .task .task-actions{
-   
+    flex-direction: column;
     display: flex;
     gap: 10px;
     
