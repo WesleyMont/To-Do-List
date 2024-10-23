@@ -95,6 +95,12 @@ body{
     margin-right: 10px;
 
 }
+
+.task .progress.done + .task-description{
+    text-decoration: line-through;
+    color: black;
+
+}
 .task .task-description{
     
     font-size: 16px;
@@ -104,13 +110,30 @@ body{
 }
 
 .task .task-actions{
-    flex-direction: column;
+   
     display: flex;
     gap: 10px;
+
     
+}
+.action-button{
+    font-size: 16px;
+}
+.action-button.edit-button{
+    color: #ffffff;
+}
+.action-button.delet-button{
+    color: black;
 }
 
 .hidden{
-    display:none;
+    display:none !important;
+}
+
+@media screen and (max-width:600px) {
+    #to_do{
+        width: 300px;
+    }
+    
 }
 

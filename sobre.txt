@@ -1,0 +1,2 @@
+Projeto feito com intuido de estudos.
+To-Do-List é uma lista de coisas para fazer ou lembrar
