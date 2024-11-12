@@ -5,8 +5,8 @@ $database='to_do_list';
 $username='postgres';
 $password='2126';
 
-try{
-$pdo = new PDO ("pgsql:host=$hostname;dbname=$database",$username,$password);
-} catch(PDOException $e){
+try {
+    $pdo = new PDO("pgsql:host=$hostname;dbname=$database",$username,$password);
+} catch(PDOException $e) {
     echo"Erro: " . $e->getMessage();
 }
