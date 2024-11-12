@@ -3,7 +3,7 @@ require_once ('database/conn.php');
 
 $tasks =[];
 
-$sql = $pdo->query("SELECT * FROM task");
+$sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
 
 if ($sql->rowCount() > 0){
   $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -45,7 +45,8 @@ if ($sql->rowCount() > 0){
             <input 
             type="checkbox" 
             name="progress" 
-            class="progress"
+            class="progress <?= $task['completed'] ? 'done' : '' ?>"
+            data-task-id=" <?= $task['id']?>"
             <?= $task ['completed'] ? 'checked' : '' ?>            
             >
 
@@ -65,7 +66,7 @@ if ($sql->rowCount() > 0){
             </div>
             
             <form action="actions/update.php" method="POST" class="to-do-form edit-task hidden">
-              <input type="text" class="hidden" name ="id" value="<?= $task ['id']?>">
+              <input type="text" class="hidden" name ="id" value="<?= $task['id']?>">
             <input 
             type="text" 
             name="description" 
